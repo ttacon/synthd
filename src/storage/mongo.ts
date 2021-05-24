@@ -21,3 +21,8 @@ class MongoistBackend implements StorageBackend {
         );
     }
 }
+
+export {
+    MongoistBackend,
+    MongoistCollection,
+};
