@@ -1,0 +1,22 @@
+{
+  "name": "synthd",
+  "version": "0.0.0",
+  "description": "Synthetic data generation system.",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@forge.rellian.tech:rellian-tech/synthd.git"
+  },
+  "author": "Trey Tacon <ttacon@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "ts-node": "^9.1.1"
+  }
+}
