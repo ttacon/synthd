@@ -73,7 +73,7 @@ interface GeneratableField {
 }
 
 interface StorageBackend {
-    store(docs: Serializable[]): void;
+    store(name: string, docs: Serializable[]): void;
 }
 
 export {
