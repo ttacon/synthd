@@ -9,14 +9,17 @@ type MongoistCollection = {
 };
 
 class MongoistBackend implements StorageBackend {
-    coll: MongoistCollection;
+    db: any;
 
-    constructor(coll: MongoistCollection) {
-        this.coll = coll;
+    constructor(db: any) {
+        this.db = db;
     }
 
-    async store(docs: Serializable[]): Promise<void> {
-        return this.coll.insertMany(
+    async store(
+        collectionName: string,
+        docs: Serializable[],
+    ): Promise<void> {
+        await this.db.collection(collectionName).insertMany(
             docs.map((d) => d.serialize(JSONSerializer)),
         );
     }

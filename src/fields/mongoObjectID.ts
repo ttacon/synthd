@@ -33,13 +33,14 @@ class MongoObjectID implements GeneratableField {
     generate(): SerializableField {
         const fieldName = this.fieldName;
         const typeFunc = this.type;
+        const value = mongoObjectID();
         return {
             name(): string {
                 return fieldName;
             },
             type: typeFunc,
             value(): any {
-                return mongoObjectID();
+                return value;
             },
         }
     }

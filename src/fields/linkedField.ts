@@ -60,6 +60,7 @@ class LinkedField implements GeneratableField {
                 if (!valuePool.length) {
                     return undefined;
                 }
+
                 return valuePool[
                     Math.floor(Math.random()*valuePool.length)
                 ].value();
