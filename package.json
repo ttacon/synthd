@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "description": "Synthetic data generation system.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "example": "examples"
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
