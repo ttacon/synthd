@@ -1,3 +1,4 @@
+import { type } from "os";
 
 class Generatable {
 
@@ -27,9 +28,30 @@ class Generatable {
                 return field;
             }
         }
-        return undefined;
-    }
+        return UnknownField;    }
 }
+
+const UnknownField: GeneratableField = {
+    name(): string { return '<unknown>'; },
+    type(): SynthdType {
+        return {
+            typeName(): string { return '<unknown>'; },
+        }
+    },
+    generate(): SerializableField {
+        return {
+            name(): string { return '<unknown>'; },
+            type(): SynthdType {
+                return {
+                    typeName(): string { return '<unknown>'; },
+                }
+            },
+            value(): any {
+                throw new Error('<unknown field>');
+            }
+        }
+    }
+};
 
 class Serializable {
     fields: SerializableField[];
@@ -47,7 +69,7 @@ type Serializer = (fields: SerializableField[]) => any;
 
 function JSONSerializer(fields: SerializableField[]): any {
     // Make an object and return it.
-    const obj = {};
+    const obj: {[key: string]: any} = {};
 
     for (const field of fields) {
         obj[field.name()] = field.value();

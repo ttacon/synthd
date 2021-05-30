@@ -4,14 +4,12 @@ import {
     StorageBackend,
 } from '../';
 
-type MongoistCollection = {
-    insertMany(docs: any)
-};
+import type { DatabaseWithProxy } from 'mongoist';
 
 class MongoistBackend implements StorageBackend {
-    db: any;
+    db: DatabaseWithProxy;
 
-    constructor(db: any) {
+    constructor(db: DatabaseWithProxy) {
         this.db = db;
     }
 
@@ -27,5 +25,4 @@ class MongoistBackend implements StorageBackend {
 
 export {
     MongoistBackend,
-    MongoistCollection,
 };
