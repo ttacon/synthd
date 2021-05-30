@@ -5,6 +5,7 @@ import IPAddress from './ipAddress';
 import LastName from './lastName';
 import LinkedField from './linkedField';
 import MongoObjectID from './mongoObjectID';
+import PhoneNumber from './phoneNumber';
 import UUID from './uuid';
 
 
@@ -16,5 +17,6 @@ export {
     LastName,
     LinkedField,
     MongoObjectID,
+    PhoneNumber,
     UUID,
 };

@@ -41,9 +41,6 @@ class LinkedField implements GeneratableField {
 
     type(): SynthdType {
         const refField = this.getRefField();
-        if (!refField) {
-            return undefined;
-        }
         return refField.type();
     }
 

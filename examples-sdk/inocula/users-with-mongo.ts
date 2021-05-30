@@ -10,6 +10,7 @@ import {
     LastName,
     LinkedField,
     MongoObjectID,
+    PhoneNumber,
     UUID,
 } from '../../src/fields';
 
@@ -22,6 +23,7 @@ const User = new Generatable('user', [
     new FirstName('firstName'),
     new LastName('lastName'),
     new Email('email'),
+    new PhoneNumber('phoneNumber'),
 ]);
 
 const Session = new Generatable('session', [
