@@ -6,8 +6,10 @@ import {
 
 import * as faker from 'faker';
 
-type DateOptions = {
+export type DateOptions = {
     past?: boolean,
+    future?: boolean,
+    yearsOffset?: number,
 };
 
 class Date implements GeneratableField {
@@ -17,6 +19,10 @@ class Date implements GeneratableField {
     constructor(fieldName: string, opts: DateOptions = {}) {
         this.fieldName = fieldName;
         this.opts = opts;
+
+        if ((this.opts.past || this.opts.future) && !this.opts.yearsOffset) {
+            this.opts.yearsOffset = 3;
+        }
     }
 
     name(): string {
@@ -41,7 +47,9 @@ class Date implements GeneratableField {
             type: typeFunc,
             value: ():any => {
                 if (this.opts.past) {
-                    return faker.date.past(3);
+                    return faker.date.past(this.opts.yearsOffset);
+                } else if (this.opts.future) {
+                    return faker.date.future(this.opts.yearsOffset)
                 }
                 return faker.date.recent(1);
             },
