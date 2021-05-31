@@ -11,6 +11,7 @@ import {
     LinkedField,
     MongoObjectID,
     PhoneNumber,
+    UserAgent,
     UUID,
 } from '../../src/fields';
 
@@ -34,10 +35,12 @@ const Session = new Generatable('session', [
     new LinkedField('userID', {
         obj: User,
         field: '_id',
-    })
+    }),
+    new UserAgent('sessionUserAgent'),
 ]);
 
 import mongoist from 'mongoist';
+import UserAgent from '../../src/fields/userAgent';
 
 const db = mongoist('mongodb://localhost:27017/users-with-mongo');
 
