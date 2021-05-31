@@ -12,6 +12,7 @@ import {
     MongoObjectID,
     UUID,
 } from '../../src/fields';
+import UserAgent from '../../src/fields/userAgent';
 
 const User = new Generatable('user', [
     new MongoObjectID('_id'),
@@ -28,7 +29,8 @@ const Session = new Generatable('session', [
     new LinkedField('userID', {
         obj: User,
         field: '_id',
-    })
+    }),
+    new UserAgent('sessionUserAgent'),
 ]);
 
 console.log(User.generate(5).map((v) => v.serialize(JSONSerializer)));
