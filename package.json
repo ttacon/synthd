@@ -1,13 +1,15 @@
 {
   "name": "synthd",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Synthetic data generation system.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
     "example": "examples"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
