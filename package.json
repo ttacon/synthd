@@ -7,13 +7,14 @@
   "directories": {
     "example": "examples"
   },
+  "files": ["dist"],
   "scripts": {
     "build": "tsc",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git@forge.rellian.tech:rellian-tech/synthd.git"
+    "url": "git@github.com:ttacon/synthd.git"
   },
   "author": "Trey Tacon <ttacon@gmail.com>",
   "license": "MIT",
