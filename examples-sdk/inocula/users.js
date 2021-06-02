@@ -1,9 +1,7 @@
 const {
     Generatable,
     JSONSerializer,
-} = require('synthd');
 
-const {
     Date,
     Email,
     FirstName,
@@ -12,7 +10,8 @@ const {
     MongoObjectID,
     UserAgent,
     UUID,
-} = require('synthd/fields');
+} = require('synthd');
+
 
 const User = new Generatable('user', [
     new MongoObjectID('_id'),
