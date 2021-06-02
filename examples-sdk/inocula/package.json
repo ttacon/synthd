@@ -1,0 +1,14 @@
+{
+  "name": "synthd-examples-sdk",
+  "version": "0.0.0",
+  "description": "",
+  "main": "users.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "synthd": "^0.1.0"
+  }
+}

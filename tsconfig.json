@@ -6,10 +6,14 @@
     "strict": true,
     "declaration": true,
     "outDir": "./dist",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "rootDir": "src"
   },
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "examples-sdk",
+    "examples"
   ]
 }
