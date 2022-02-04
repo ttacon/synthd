@@ -78,6 +78,14 @@ function JSONSerializer(fields: SerializableField[]): any {
     return obj;
 }
 
+function ArrayFieldSerializer(fields: SerializableField[]): any {
+    const vals: any[] = [];
+    for (const field of fields) {
+        vals.push(field.value());
+    }
+    return vals;
+};
+
 interface SerializableField {
     name(): string;
     type(): SynthdType;
@@ -107,6 +115,7 @@ export {
     StorageBackend,
     SynthdType,
 
+    ArrayFieldSerializer,
     JSONSerializer,
 }
 
