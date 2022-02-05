@@ -20,7 +20,7 @@ class MySQLBackend implements StorageBackend {
         const insertQuery = `INSERT INTO ${tableName} VALUES ?`;
         const values = docs.map((d) => d.serialize(ArrayFieldSerializer));
         return new Promise((resolve, reject) => {
-            this.db.query(insertQuery, values, (err, results) => {
+            this.db.query(insertQuery, [ values ], (err, results) => {
                 if (err) reject(err);
                 resolve(results);
             });
