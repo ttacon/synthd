@@ -4,9 +4,10 @@ import {
     SynthdType
 } from '../';
 
-import { faker } from '@faker-js/faker';
+import faker from '@faker-js/faker';
 
-class UserAgent implements GeneratableField {
+
+class Animal implements GeneratableField {
     fieldName: string;
 
     constructor(fieldName: string) {
@@ -20,7 +21,7 @@ class UserAgent implements GeneratableField {
     type(): SynthdType {
         return {
             typeName(): string {
-                return 'UserAgent';
+                return 'Animal';
             }
         };
     }
@@ -29,16 +30,16 @@ class UserAgent implements GeneratableField {
         const fieldName = this.fieldName;
         const typeFunc = this.type;
         return {
-            name(): string {
+         name(): string {
                 return fieldName;
             },
             type: typeFunc,
-            value: ():any => {
-                return faker.internet.userAgent();
+            value(): any {
+                return faker.animal.type();
             },
         }
     }
 
 }
 
-export default UserAgent;
+export default Animal;

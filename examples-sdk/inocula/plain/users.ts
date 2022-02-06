@@ -1,7 +1,7 @@
 import {
     Generatable,
     JSONSerializer,
-} from '../../src';
+} from '../../../src';
 
 import {
     Date,
@@ -9,13 +9,12 @@ import {
     FirstName,
     LastName,
     LinkedField,
-    MongoObjectID,
     UUID,
-} from '../../src/fields';
-import UserAgent from '../../src/fields/userAgent';
+} from '../../../src/fields';
+import UserAgent from '../../../src/fields/userAgent';
 
 const User = new Generatable('user', [
-    new MongoObjectID('_id'),
+    new UUID('_id'),
     new FirstName('firstName'),
     new LastName('lastName'),
     new Email('email'),

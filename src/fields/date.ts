@@ -4,7 +4,7 @@ import {
     SynthdType
 } from '../';
 
-import * as faker from 'faker';
+import { faker  } from '@faker-js/faker';
 
 export type DateOptions = {
     past?: boolean,

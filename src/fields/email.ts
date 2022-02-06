@@ -4,7 +4,7 @@ import {
     SynthdType
 } from '../';
 
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 
 class Email implements GeneratableField {

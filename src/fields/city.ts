@@ -6,7 +6,8 @@ import {
 
 import { faker } from '@faker-js/faker';
 
-class UserAgent implements GeneratableField {
+
+class City implements GeneratableField {
     fieldName: string;
 
     constructor(fieldName: string) {
@@ -20,7 +21,7 @@ class UserAgent implements GeneratableField {
     type(): SynthdType {
         return {
             typeName(): string {
-                return 'UserAgent';
+                return 'City';
             }
         };
     }
@@ -33,12 +34,12 @@ class UserAgent implements GeneratableField {
                 return fieldName;
             },
             type: typeFunc,
-            value: ():any => {
-                return faker.internet.userAgent();
+            value(): any {
+                return faker.address.city();
             },
         }
     }
 
 }
 
-export default UserAgent;
+export default City;
