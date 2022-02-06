@@ -4,7 +4,7 @@ import {
     SynthdType
 } from '../';
 
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 type PhoneNumberOptions = {
     areaCode?: number,
