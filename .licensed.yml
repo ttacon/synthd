@@ -8,3 +8,7 @@ allowed:
   - isc
   - mit
   - cc0-1.0
+
+ignored:
+  npm:
+    - "@faker-js/faker"
