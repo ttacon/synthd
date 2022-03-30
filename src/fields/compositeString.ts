@@ -4,23 +4,27 @@ import {
     SynthdType
 } from '../';
 
+type CompositeStringOptions = {
+    typeName: string,
+    fieldName: string,
+    delimeter?: string,
+};
+
 class CompositeString implements GeneratableField {
-    fieldName: string;
-    typeName: string;
+    options: CompositeStringOptions;
     fieldGenerators: GeneratableField[];
 
-    constructor(typeName: string, fieldName: string, ...fieldGenerators: GeneratableField[]) {
-        this.typeName = typeName;
-        this.fieldName = fieldName;
+    constructor(options: CompositeStringOptions, ...fieldGenerators: GeneratableField[]) {
+        this.options = options;
         this.fieldGenerators = fieldGenerators;
     }
 
     name(): string {
-        return this.fieldName;
+        return this.options.fieldName;
     }
 
     type(): SynthdType {
-        const typeName = this.typeName;
+        const typeName = this.options.typeName;
         return {
             typeName(): string {
                 return typeName;
@@ -29,9 +33,10 @@ class CompositeString implements GeneratableField {
     }
 
     generate(): SerializableField {
-        const fieldName = this.fieldName;
+        const fieldName = this.options.fieldName;
         const typeFunc = this.type;
         const fieldGenerators = this.fieldGenerators;
+        const delimeter = this.options.delimeter || ' ';
         return {
             name(): string {
                 return fieldName;
@@ -42,7 +47,7 @@ class CompositeString implements GeneratableField {
                 for (const gen of fieldGenerators) {
                     gener8d.push(gen.generate().value());
                 }
-                return gener8d.join(" ");
+                return gener8d.join(delimeter);
             },
         }
     }
