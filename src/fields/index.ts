@@ -1,3 +1,4 @@
+import CompositeString from './compositeString';
 import Date from './date';
 import Email from './email';
 import FirstName from './firstName';
@@ -14,6 +15,7 @@ import UUID from './uuid';
 
 
 export {
+    CompositeString,
     Date,
     Email,
     FirstName,
