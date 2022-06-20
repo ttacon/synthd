@@ -1,4 +1,5 @@
 import CompositeString from './compositeString';
+import Constant from './constant';
 import Counter from './counter';
 import Date from './date';
 import Email from './email';
@@ -17,6 +18,7 @@ import UUID from './uuid';
 
 export {
     CompositeString,
+    Constant,
     Counter,
     Date,
     Email,
