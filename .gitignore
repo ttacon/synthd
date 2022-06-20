@@ -1,3 +1,13 @@
-node_modules/
+
+# Ignore code coverage files
+coverage/
+
+# Ignore build artifacts
 dist/
+
+# Ignore generated documentation
 docs/
+
+
+# Ignore node modules
+node_modules/
